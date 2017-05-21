@@ -59,4 +59,24 @@ public class TodoTest {
         assertThat(result.getTitle()).isEqualTo("title");
         assertThat(result.getDescription()).isEqualTo("description");
     }
+
+    @Test
+    public void shouldThrowExceptionWhenIDIsNull() throws Exception {
+        // Given
+        this.thrown.expect(IllegalArgumentException.class);
+        this.thrown.expectMessage("ID cannot be null!");
+        // When
+        Todo result = new Todo(null, "title", "description");
+    }
+
+    @Test
+    public void shouldCreteNewTodoWithID() throws Exception {
+        // When
+        Todo result = new Todo(1L, "title", "description");
+        // Then
+        assertThat(result).isNotNull();
+        assertThat(result.getId()).isEqualTo(1L);
+        assertThat(result.getTitle()).isEqualTo("title");
+        assertThat(result.getDescription()).isEqualTo("description");
+    }
 }
