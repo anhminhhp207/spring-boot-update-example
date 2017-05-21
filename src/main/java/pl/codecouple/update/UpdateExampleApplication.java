@@ -9,4 +9,5 @@ public class UpdateExampleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UpdateExampleApplication.class, args);
 	}
+
 }
